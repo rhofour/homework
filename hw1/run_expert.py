@@ -62,6 +62,9 @@ def main():
 
     expert_data = {'observations': np.array(observations),
                     'actions': np.array(actions)}
+    
+    with open('{}_{}_data.pkl'.format(module_name, args.num_rollouts), 'wb') as f:
+        pickle.dump(expert_data, f)
 
 if __name__ == '__main__':
     main()
